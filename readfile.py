@@ -1,7 +1,9 @@
+import csv
+
 wordList = []
 
 def readWordListFromFile():
-    with open("wordlist.txt", "r") as a_file:
-        for line in a_file:
-            stripped_line = line.strip()
-            wordList.append(stripped_line)
+    with open("wordlist.csv", 'r') as f:
+        reader = csv.reader(f, delimiter=',')
+        for row in reader:
+            wordList.append(row)
